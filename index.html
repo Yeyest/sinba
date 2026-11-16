@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <!-- PASO 1: permite que el navegador use el ancho real del celular. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inicio | SINBA</title>
+  <!-- PASO 2: conectar este HTML con el archivo CSS compartido. -->
+  <link rel="stylesheet" href="css/estilos.css">
+  <!-- Este icono aparece en la pestaña del navegador. -->
+  <link rel="icon" type="image/png" href="imagenes/logo.png">
+  <!-- defer: el script se ejecuta cuando el HTML ya está cargado. -->
+  <script src="js/menu.js" defer></script>
+</head>
+
+<body>
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+  <!-- PASO 3: este header permanece visible con position: sticky en CSS. -->
+  <header class="cabecera">
+    <div class="contenedor barra">
+      <a class="marca" href="index.html"><img src="imagenes/logo.png" alt="SINBA" width="120" height="50"></a>
+      <!-- PASO 4: la lista principal se ordena horizontalmente con Flexbox. -->
+      <!-- Botón del menú móvil. Nace oculto: menu.js lo muestra solo si el JS carga bien. -->
+      <button class="boton-menu" id="boton-menu" type="button" aria-expanded="false" aria-controls="navegacion"
+        aria-label="Abrir menú" hidden>
+        <span class="icono-menu" aria-hidden="true"></span>
+        <span id="texto-menu">Menú</span>
+      </button>
+      <nav id="navegacion" aria-label="Navegación principal">
+        <ul class="menu">
+          <li><a href="index.html#inicio">Inicio</a></li>
+          <li><a href="index.html#nosotros">Nosotros</a></li>
+          <li>
+            <!-- details abre el submenú con clic, Enter o toque; no necesita JS. -->
+            <details class="desplegable" id="resolver">
+              <summary>Resolver</summary>
+              <!-- Esta lista es el menú vertical desplegable. -->
+              <ul class="submenu">
+                <li><a href="index.html#servicios">Servicios</a></li>
+                <li><a href="index.html#orientador">Ver objetos</a></li>
+                <li><a href="index.html#contacto">Solicitar devolución</a></li>
+              </ul>
+            </details>
+          </li>
+
+
+          <li><a href="recursos.html">Video y guía</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main id="contenido">
+    <!-- PASO 5: el inicio está en la sección, no en el header sticky. -->
+    <section id="inicio" class="hero contenedor dos-columnas" aria-labelledby="titulo">
+      <div>
+        <p class="etiqueta">Por un mundo sin basura</p>
+
+        <h1 id="titulo">Nada sobra.<br>Todo se transforma.</h1>
+
+        <p>En Sinba trabajamos para reducir los residuos y darles una nueva vida. A través de la economía circular,
+          transformamos la basura en recursos que benefician al ambiente y a las personas.</p>
+
+        <a class="boton" href="#orientador">Descubre cómo ayudar</a>
+
+        <a class="enlace" href="#nosotros">Conoce Sinba</a>
+
+        <p class="nota">Pequeñas acciones pueden generar grandes cambios.</p>
+      </div>
+      <figure class="postal"><img class="foto" src="imagenes/imagen2.jpg" alt="Mochila preparada para una salida"
+          width="1000" height="667">
+        <figcaption>Hay cosas que merecen volver contigo.</figcaption>
+      </figure>
+    </section>
+    <section id="nosotros" class="seccion fondo">
+      <div class="contenedor dos-columnas">
+        <img class="foto" src="imagenes/imagen1.jpg" alt="Productos y puestos de una feria" width="1000" height="667"
+          loading="lazy">
+        <div>
+          <p class="etiqueta">Conoce nuestra iniciativa</p>
+
+          <h2>Un mundo donde nada sobra y nadie sobra.</h2>
+
+          <p>Sinba es una empresa socioambiental peruana que busca reducir la contaminación y aprovechar mejor los
+            residuos. Su propuesta se basa en la economía circular, un modelo que permite transformar los desechos en
+            nuevos recursos.</p>
+
+          <h3>Nuestro propósito</h3>
+
+          <p>Cocrear un mundo sin basura, donde los materiales puedan aprovecharse nuevamente y las personas participen
+            en el cambio.</p>
+
+          <p>Además, Sinba trabaja junto con recicladores para contribuir a su desarrollo personal y profesional.</p>
+        </div>
+      </div>
+    </section>
+    <section id="servicios" class="seccion contenedor">
+      <p class="etiqueta">¿Cómo generamos el cambio?</p>
+
+      <h2>Los residuos pueden tener una nueva vida.</h2>
+
+      <div class="tarjetas">
+        <article class="tarjeta">
+          <span class="numero">01 / Aprende</span>
+          <h3>Educación ambiental</h3>
+          <p>Promovemos el aprendizaje sobre el reciclaje, la reducción de residuos y la economía circular.</p>
+          <a href="#orientador">Aprender más</a>
+        </article>
+
+        <article class="tarjeta">
+          <span class="numero">02 / Separa</span>
+          <h3>Gestión de residuos</h3>
+          <p>Impulsamos una correcta separación de los residuos para facilitar su aprovechamiento.</p>
+          <a href="#orientador">Identificar residuos</a>
+        </article>
+
+        <article class="tarjeta">
+          <span class="numero">03 / Transforma</span>
+          <h3>Economía circular</h3>
+          <p>Los residuos orgánicos pueden convertirse en abono y los reciclables en materia prima para nuevos
+            productos.</p>
+          <a href="#proyectos">Conocer el proceso</a>
+        </article>
+      </div>
+    </section>
+    <section id="orientador" class="seccion fondo">
+      <div class="contenedor">
+        <p class="etiqueta">Aprende con Sinba</p>
+
+        <h2>¿Qué tipo de residuo tienes?</h2>
+
+        <p>Selecciona una opción y descubre cómo se puede aprovechar. Esta guía es una simulación educativa.</p>
+
+        <fieldset class="orientador">
+          <legend>Tipo de residuo</legend>
+
+          <input type="radio" name="objeto" id="mochila" checked>
+          <label for="mochila">Restos orgánicos</label>
+
+          <input type="radio" name="objeto" id="libreta">
+          <label for="libreta">Papel y cartón</label>
+
+          <input type="radio" name="objeto" id="abrigo">
+          <label for="abrigo">Botella de plástico</label>
+
+          <div class="resultados">
+            <div class="respuesta mochila">
+              <p class="etiqueta">Residuo orgánico</p>
+              <h3>Los restos pueden convertirse en recursos</h3>
+              <p>Los residuos orgánicos aprovechables pueden transformarse en fertilizante orgánico o alimento para
+                animales mediante procesos adecuados.</p>
+            </div>
+
+            <div class="respuesta libreta">
+              <p class="etiqueta">Residuo reciclable</p>
+              <h3>El papel puede tener una nueva vida</h3>
+              <p>El papel y el cartón que se encuentren en condiciones adecuadas pueden recuperarse y acondicionarse
+                para utilizarlos como materia prima.</p>
+            </div>
+
+            <div class="respuesta abrigo">
+              <p class="etiqueta">Residuo reciclable</p>
+              <h3>El plástico puede aprovecharse nuevamente</h3>
+              <p>Algunos envases de plástico pueden recuperarse y acondicionarse para convertirse en materia prima para
+                nuevos productos.</p>
+            </div>
+
+            <a class="boton" href="#contacto">Quiero aprender más</a>
+          </div>
+        </fieldset>
+
+        <p class="nota">Ejemplo educativo. El aprovechamiento depende del tipo de material y de las condiciones en que
+          se encuentre.</p>
+      </div>
+    </section>
+    <section id="proyectos" class="seccion contenedor">
+      <p class="etiqueta">Cómo sería el servicio</p>
+      <h2>Un reencuentro con calma.</h2>
+      <div class="tarjetas">
+        <article class="tarjeta">
+          <h3>Encontramos</h3>
+          <p>La mesa de ayuda recibiría objetos encontrados sin exhibir detalles privados.</p>
+        </article>
+        <article class="tarjeta">
+          <h3>Conversamos</h3>
+          <p>Una persona responsable revisaría los detalles de la solicitud.</p>
+        </article>
+        <article class="tarjeta">
+          <h3>Coordinamos</h3>
+          <p>Si existe coincidencia, se acordaría una devolución en un punto atendido.</p>
+        </article>
+      </div>
+    </section>
+    <section id="galeria" class="seccion fondo">
+      <div class="contenedor">
+        <h2>Detrás de cada objeto, una historia.</h2>
+        <div class="galeria">
+          <figure><img src="imagenes/mochila.jpg" alt="Mochila de referencia para la iniciativa" width="1000"
+              height="667" loading="lazy">
+            <figcaption>Una compañera de recorridos</figcaption>
+          </figure>
+          <figure><img src="imagenes/feria.jpg" alt="Productos expuestos en una feria" width="1000" height="667"
+              loading="lazy">
+            <figcaption>Un lugar para encontrarnos</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+    <section id="testimonios" class="seccion contenedor">
+      <blockquote>“No era solo una libreta. Ahí estaba el dibujo que me hizo mi hija”.</blockquote>
+      <p>Relato ficticio para representar la necesidad del usuario.</p>
+    </section>
+    <section id="contacto" class="seccion fondo">
+      <div class="contenedor dos-columnas">
+        <div>
+          <p class="etiqueta">HU de ejemplo · Solicitar una devolución</p>
+          <h2>Cuéntanos qué recuerdas.</h2>
+          <p>Completa datos ficticios para probar el recorrido. En un servicio real, una persona revisaría tu solicitud
+            antes de coordinar una entrega.</p>
+          <p class="nota">Esta práctica no guarda datos ni registra solicitudes. No ingreses información personal real.
+          </p>
+        </div>
+        <!-- PASO 8: required valida campos. Sin name: no añadimos datos a la URL. -->
+        <form action="confirmacion.html" method="get" class="formulario">
+          <label for="nombre">Nombre de prueba</label><input id="nombre" type="text" required maxlength="60"
+            placeholder="Ejemplo: Ana" autocomplete="off">
+          <label for="correo">Correo de prueba</label><input id="correo" type="email" required
+            placeholder="ana@example.com" autocomplete="off">
+          <label for="actividad">Objeto que buscas</label><select id="actividad" required>
+            <option value="">Selecciona una categoría</option>
+            <option>Mochila</option>
+            <option>Libreta</option>
+            <option>Abrigo</option>
+          </select>
+          <label for="detalle">Un detalle para reconocerlo</label><textarea id="detalle" required minlength="8"
+            maxlength="240" rows="3" placeholder="Escribe una característica inventada"></textarea>
+          <div><input id="acepto" type="checkbox" required> <label for="acepto">Entiendo que es una simulación.</label>
+          </div>
+          <button type="submit" class="boton">Ver el siguiente paso</button>
+        </form>
+      </div>
+    </section>
+  </main>
+  <!-- PASO FINAL: pie compartido por las páginas del sitio. -->
+  <footer class="pie">
+    <div class="contenedor">
+      <p><strong>SINBA</strong> · Objetos que vuelven a casa</p>
+      <p>Contacto de ejemplo: hola@ejemplo.org</p>
+      <nav class="redes" aria-label="Redes sociales de referencia">
+        <!-- Son páginas generales de las redes; reemplazar por cuentas del proyecto. -->
+        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"><img src="iconos/facebook.svg"
+            alt="" width="24" height="24">Facebook</a>
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><img src="iconos/instagram.svg"
+            alt="" width="24" height="24">Instagram</a>
+        <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer"><img src="iconos/youtube.svg"
+            alt="" width="24" height="24">YouTube</a>
+      </nav>
+      <p>© 2026 SINBA · Ejemplo educativo ficticio · <a href="FUENTES.txt">Créditos de recursos</a></p>
+    </div>
+  </footer>
+</body>
+
+</html>
